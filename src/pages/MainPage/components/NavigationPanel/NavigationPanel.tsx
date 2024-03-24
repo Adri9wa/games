@@ -6,14 +6,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const NavigationPanel = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { pathname } = useLocation();
   const handleNavigate = (newTab: any) => {
     navigate(newTab.toLowerCase());
   };
-  console.log(location);
   return (
     <StyledNavigationPanel>
-      <StyledTabs onChange={handleNavigate} tabs={mainPageTabs} />
+      <StyledTabs
+        value={pathname}
+        onChange={handleNavigate}
+        tabs={mainPageTabs}
+      />
     </StyledNavigationPanel>
   );
 };
