@@ -1,12 +1,9 @@
 import React from "react";
-import { NumbersGamePage } from "./pages";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
 function App() {
-  return (
-    <div>
-      <NumbersGamePage />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
